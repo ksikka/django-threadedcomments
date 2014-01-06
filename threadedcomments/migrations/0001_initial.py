@@ -14,7 +14,7 @@ class Migration(SchemaMigration):
             ('title', self.gf('django.db.models.fields.TextField')(blank=True)),
             ('parent', self.gf('django.db.models.fields.related.ForeignKey')(default=None, related_name='children', null=True, blank=True, to=orm['threadedcomments.ThreadedComment'])),
             ('last_child', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['threadedcomments.ThreadedComment'], null=True, blank=True)),
-            ('tree_path', self.gf('django.db.models.fields.TextField')(db_index=True, max_length=3000)),
+            ('tree_path', self.gf('django.db.models.fields.CharField')(db_index=True, max_length=3000)),
         ))
         db.send_create_signal('threadedcomments', ['ThreadedComment'])
 
